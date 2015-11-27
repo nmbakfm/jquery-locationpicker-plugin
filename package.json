@@ -22,9 +22,14 @@
   },
   "main": "dist/locationpicker.jquery.min.js",
   "description": "This plug-in allows finding and selecting a location on the Google map. Along with single point selection, it allows area selection by choosing a point and specifying a radius. The selection can be saved to any HTML input element or processed by Javascript with callback support. An optional automatic address resolver can reverse geocode the selection to an address. The plug-in also supports searching by address typed into the bound input element which uses auto-complete feature from Google API to make the search process easier. In this case the marker will be automatically positioned on the map after successful address resolution.",
-  "dependencies": {},
+  "dependencies": {
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-uglify": "^0.8.1",
+    "load-grunt-tasks": "^3.3.0"
+  },
   "devDependencies": {
-    "grunt": "~0.4.5",
+    "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-uglify": "^0.8.0",

@@ -1,4 +1,4 @@
-/*! jquery-locationpicker - v0.1.12 - 2015-01-05 */
+/*! jquery-locationpicker - v0.1.12 - 2015-11-27 */
 (function($) {
     function GMapContext(domElement, options) {
         var _map = new google.maps.Map(domElement, options);
@@ -133,9 +133,6 @@
         if (inputBinding) {
             if (inputBinding.radiusInput) {
                 inputBinding.radiusInput.on("change", function(e) {
-                    if (!e.originalEvent) {
-                        return;
-                    }
                     gmapContext.radius = $(this).val();
                     GmUtility.setPosition(gmapContext, gmapContext.location, function(context) {
                         context.settings.onchanged.apply(gmapContext.domContainer, [ GmUtility.locationFromLatLng(context.location), context.radius, false ]);
@@ -158,9 +155,6 @@
             }
             if (inputBinding.latitudeInput) {
                 inputBinding.latitudeInput.on("change", function(e) {
-                    if (!e.originalEvent) {
-                        return;
-                    }
                     GmUtility.setPosition(gmapContext, new google.maps.LatLng($(this).val(), gmapContext.location.lng()), function(context) {
                         context.settings.onchanged.apply(gmapContext.domContainer, [ GmUtility.locationFromLatLng(context.location), context.radius, false ]);
                     });
@@ -168,9 +162,6 @@
             }
             if (inputBinding.longitudeInput) {
                 inputBinding.longitudeInput.on("change", function(e) {
-                    if (!e.originalEvent) {
-                        return;
-                    }
                     GmUtility.setPosition(gmapContext, new google.maps.LatLng(gmapContext.location.lat(), $(this).val()), function(context) {
                         context.settings.onchanged.apply(gmapContext.domContainer, [ GmUtility.locationFromLatLng(context.location), context.radius, false ]);
                     });
